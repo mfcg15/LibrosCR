@@ -1,0 +1,150 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body
+{
+    padding: 50px 100px 0px 100px;
+}
+
+.contendor
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont_autor, .cont_libro
+{
+    width: 49.5%;
+    height: fit-content;
+    padding: 40px;
+    background-color: #34393d;
+}
+
+h2
+{
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0d78fc;
+}
+
+label
+{
+    font-size: 24px;
+    color: white;
+}
+
+.btnAutor, .btnLibros
+{
+    margin-top: 30px;
+}
+
+.cont_allAutor, .cont_allLibros
+{
+    width: 49.5%;
+}
+
+.cAllAuthor, .cAllBooks
+{
+    padding: 40px 40px 0px 40px;
+    height: fit-content;
+}
+
+.letraAutor , .letraLibros
+{
+    color: black;
+    margin-bottom: 20px;
+}
+
+.cajaAutores, .cajaLibros
+{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.aCadaAutor, .aCadaLibro
+{
+    margin: 0px 0px 10px 0px;
+    color:#418edc;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.cANewBook , .home
+{
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    padding: 10px 0px 10px 40px;
+}
+
+.aNewBook, .aBack
+{
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.tituloBooks
+{
+    color: #ffbb14;
+}
+
+.margin_top_books
+{
+    margin-top: 20px;
+}
+
+.tituloAS, .tituloBS
+{
+    color: black;
+}
+
+.letraAutorFavorito
+{
+    color: #95e1e8;
+    margin-bottom: 20px;
+}
+
+.cont_fav_book
+{
+    width: 50%;
+    height: fit-content;
+    padding: 10px;
+}
+
+.cont_addAuthor
+{
+    width: 50%;
+    height: fit-content;
+    padding: 10px 15px 0px 15px;
+}
+
+.labelAS
+{
+    color: black;
+}
+
+.select
+{
+    margin-bottom: 20px;
+}
+
+.favby, ul, li
+{
+    font-size: 20px;
+}
+
+ul
+{
+    margin-left: 10px;
+}
+
+li
+{
+    list-style: none;
+    padding: 5px;
+}

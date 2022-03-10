@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+{% block titulo%}
+    <title>Author Show</title>
+{% endblock %}
+{% block body%}
+    <body class="body">
+        <div class="contendor">
+            <div class="cont_fav_book">
+                {% for x in autor %}
+                    <h2 class="tituloAS">{{x.nombre}}'s Favorites Books</h2>
+                {% endfor %}
+                <table class="table table-warning table-bordered">
+                    <thead>
+                        <th>Title</th>
+                        <th># of pages</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for at in autorlibro %}
+                                <tr>
+                                    <td>{{at.titulo}}</td>
+                                    <td>{{at.numero_paginas}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="/authors" class="aNewBook">Home</a>
+            </div>
+            <div class="cont_addAuthor">
+                <h2 class="letraAutorFavorito">Add Author's Favorite</h2>
+                <div class="cajaAutores">
+                    <form action="/create_favoriteAB"method="POST" class="margintop">
+                        <label for="libro_id" class="labelAS">Book:</label>
+                        <select class="form-select margin select" name="libro_id">
+                            {% for libro in libros %}
+                                <option value="{{libro.id}}">{{libro.titulo}}</option>
+                            {% endfor %}
+                        </select>
+                        {% for x in autor %}
+                            <input type="hidden" name="autor_id" value="{{x.id}}">
+                        {% endfor %}
+                        <button type="submit" class="btn btn-primary btnNinja">Add Book</button>
+                    </form>
+                </div>  
+            </div>
+        </div>
+    </body>
+{% endblock %}

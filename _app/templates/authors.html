@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block titulo%}
+    <title>Authors</title>
+{% endblock %}
+{% block body%}
+    <body class="body">
+        <div class="contendor">
+            <div class="cont_autor">
+                <h2>New Author</h2>
+                <form action="/create_autor"method="POST">
+                    <label for="nombre">Name:</label>
+                    <input type="text" class="form-control" name="nombre">
+                    <button type="submit" class="btn btn-primary btnAutor">Add Author</button>
+                </form>
+            </div>
+            <div class="cont_allAutor">
+                <div class="cAllAuthor">
+                    <h2 class="letraAutor">All Authors</h2>
+                    <div class="cajaAutores">
+                        {% for autor in all_autores %}
+                            <a href="/authors/{{autor.id}}" class="aCadaAutor">{{autor.nombre}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="cANewBook">
+                    <a href="/books" class="aNewBook">Add Book</a>
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}

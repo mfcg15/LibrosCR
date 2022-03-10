@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+{% block titulo%}
+    <title>Book Show</title>
+{% endblock %}
+{% block body%}
+    <body class="body">
+        <div class="contendor">
+            <div class="cont_fav_book">
+                {% for x in book %}
+                    <h2 class="tituloBS">Title: {{x.titulo}}</h2>
+                {% endfor %}
+                <p class="favby">Favorited by:</p>
+                <ul>
+                    {% for la in libroautor %}
+                        <li>{{la.nombre}}</li>
+                    {% endfor %}
+                </ul>
+                <a href="/authors" class="aNewBook">Home</a>
+            </div>
+            <div class="cont_addAuthor">
+                <h2 class="letraAutorFavorito">Add Book's Favorite</h2>
+                <div class="cajaAutores">
+                    <form action="/create_favoriteBA"method="POST" class="margintop">
+                        <label for="autor_id" class="labelAS">Author:</label>
+                        <select class="form-select select" name="autor_id">
+                            {% for autor in autores %}
+                                <option value="{{autor.id}}">{{autor.nombre}}</option>
+                            {% endfor %}
+                        </select>
+                        {% for x in book %}
+                            <input type="hidden" name="libro_id" value="{{x.id}}">
+                        {% endfor %}
+                        <button type="submit" class="btn btn-primary btnNinja">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}

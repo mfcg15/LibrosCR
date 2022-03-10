@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% block titulo%}
+    <title>Books</title>
+{% endblock %}
+{% block body%}
+    <body class="body">
+        <div class="contendor">
+            <div class="cont_libro">
+                <h2 class="tituloBooks">New Book</h2>
+                <form action="/create_book" method="POST">
+                    <label for="titulo">Title:</label>
+                    <input type="text" class="form-control" name="titulo">
+                    <label for="numero_paginas" class="margin_top_books">Numer of pages:</label>
+                    <input type="number" min="1" class="form-control" name="numero_paginas">
+                    <button type="submit" class="btn btn-warning btnLibros">Add Book</button>
+                </form>
+            </div>
+            <div class="cont_allLibros">
+                <div class="cAllBooks">
+                    <h2 class="letraLibros">All Books</h2>
+                    <div class="cajaLibros">
+                        {% for libro in all_libros %}
+                            <a href="/books/{{libro.id}}" class="aCadaLibro">{{libro.titulo}}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="home">
+                    <a href="/" class="aBack">Home</a>
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}
